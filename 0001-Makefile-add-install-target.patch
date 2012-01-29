@@ -1,0 +1,57 @@
+From a2c026278f7e3682163a98321750cba4121c1505 Mon Sep 17 00:00:00 2001
+From: Jari Aalto <jari.aalto@cante.net>
+Date: Thu, 20 Dec 2007 13:01:21 +0200
+Subject: [PATCH] Makefile: add install target
+
+Signed-off-by: Jari Aalto <jari.aalto@cante.net>
+---
+ Makefile |   36 ++++++++++++++++++++++++++++++++++++
+ 1 files changed, 36 insertions(+), 0 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index 8fe3329..72ef675 100644
+--- a/Makefile
++++ b/Makefile
+@@ -117,3 +117,39 @@ dist-install: dist
+ 	mv rxp-$(VERSION).tar.gz $(DISTDIR)
+ #	sed s/_VERSION_/$(VERSION)/ <rxp-release.xml | sed s/_DATE_/`date +%Y%m%d`/ >$(DISTDIR)/rxp-release.xml
+ #	cd $(DISTDIR); rm rxp.tar.gz; ln -s rxp-$(VERSION).tar.gz rxp.tar.gz
++
++DESTDIR		=
++prefix		= /usr
++exec_prefix	= $(prefix)
++man_prefix	= $(prefix)/share
++
++PACKAGE		= rxp
++INSTALL		= /usr/bin/install
++INSTALL_BIN	= $(INSTALL) -m 755
++INSTALL_SUID	= $(INSTALL) -m 4755
++INSTALL_DATA	= $(INSTALL) -m 644
++
++INSTALL_OBJS_BIN   = $(PACKAGE)
++INSTALL_OBJS_MAN1  = *.1
++INSTALL_OBJS_SHARE =
++
++MANDIR1		= $(DESTDIR)$(man_prefix)/man/man1
++MANDIR5		= $(DESTDIR)$(man_prefix)/man/man5
++MANDIR8		= $(DESTDIR)$(man_prefix)/man/man8
++BINDIR		= $(DESTDIR)$(exec_prefix)/bin
++SBINDIR		= $(DESTDIR)$(exec_prefix)/sbin
++ETCDIR		= $(DESTDIR)/etc/$(PACKAGE)
++SHAREDIR	= $(DESTDIR)$(prefix)/share/$(PACKAGE)
++LIBDIR		= $(DESTDIR)$(prefix)/lib/$(PACKAGE)
++
++install-bin:
++	# install-bin
++	$(INSTALL_BIN) -d $(BINDIR)
++	$(INSTALL_BIN) -s $(INSTALL_OBJS_BIN) $(BINDIR)
++
++install-man:
++	# install-man
++	$(INSTALL_BIN) -d $(MANDIR1)
++	$(INSTALL_DATA) $(INSTALL_OBJS_MAN1) $(MANDIR1)
++
++install: install-bin install-man
+-- 
+1.5.4-rc0.GIT
+

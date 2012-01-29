@@ -1,0 +1,5 @@
+sdesc: "Simple validating XML parser"
+ldesc: "A simple validating XML parser written by Richard Tobin. It
+supports XML 1.1, Namespaces 1.1, and XML Catalogs."
+category: Utils
+requires: libgcc1

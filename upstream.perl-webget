@@ -1,0 +1,3 @@
+tag1: rxp
+  # ftp://ftp.cogsci.ed.ac.uk/pub/richard/ pregexp:rxp.*tar.gz file:rxp-1.3.0.tar.gz new: x:
+  http://packages.debian.org/unstable/rxp pregexp:orig.tar.gz file:rxp_1.3.0.orig.tar.gz new: x: 
