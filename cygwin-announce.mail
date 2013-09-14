@@ -1,7 +1,5 @@
--- Copyright (C) 2007-2010 Jari Aalto; Licenced under GPL v2 or later
-
 To: cygwin-announce@cygwin.com
-Subject: Updated: rxp 1.5.0-1 -- Simple validating XML parser
+Subject: Updated: rxp 1.5.0-2 -- Simple validating XML parser
 
 PACKAGE DESCRIPTION
 ===================
@@ -15,7 +13,7 @@ supports XML 1.1, Namespaces 1.1, and XML Catalogs.
 CHANGES SINCE LAST RELEASE
 ==========================
 
-None.
+Cygwin: correct *.exe file permissions
 
 INSTALL OR UPGRADE NOTES
 ========================
